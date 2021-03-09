@@ -7,4 +7,7 @@
     <string name="BUTTON_SAVE">Сохранить</string>
     <string name="OK_RESULT_TOAST">Изменения сохранены</string>
     <string name="ANOTHER_RESULT_TOAST">Изменения не сохранены</string>
+    <string name="DEFAULT_NAME">Макеев Иван Николаевич</string>
+    <string name="DEFAULT_BIRTHDATE">12.02.1991</string>
+    <string name="DEFAULT_MAIL">makeev_in@list.ru</string>
 </resources>

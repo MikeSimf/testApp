@@ -11,19 +11,15 @@ import android.widget.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final int REQUEST_CODE = 0;
-    private static final String USER_NAME = "1";
-    private static final String USER_BIRTH_DATE = "2";
-    private static final String USER_MAIL = "3";
+    private static final String USER_NAME = "Фамилия Имя Отчество";
+    private static final String USER_BIRTH_DATE = "01.01.1970";
+    private static final String USER_MAIL = "example@google.com";
 
 
     TextView tvUserName;
     TextView tvUserBirthDate;
     TextView tvUserMail;
     Button btnInfoEdit;
-
-    String userName = "Макеев Иван Николаевич";
-    String userBirthDate = "01.01.1991";
-    String userMail = "makeev_in@list.ru";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnInfoEdit = (Button) findViewById(R.id.btnInfoEdit);
 
         if(savedInstanceState == null){
-            tvUserName.setText(userName);
-            tvUserBirthDate.setText(userBirthDate);
-            tvUserMail.setText(userMail);
+            tvUserName.setText(R.string.DEFAULT_NAME);
+            tvUserBirthDate.setText(R.string.DEFAULT_BIRTHDATE);
+            tvUserMail.setText(R.string.DEFAULT_MAIL);
         } else {
 
             tvUserBirthDate.setText(savedInstanceState.getString(USER_BIRTH_DATE));
@@ -52,18 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
         outState.putString(USER_MAIL, tvUserMail.getText().toString());
         outState.putString(USER_NAME, tvUserName.getText().toString());
         outState.putString(USER_BIRTH_DATE, tvUserBirthDate.getText().toString());
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        tvUserMail.setText(savedInstanceState.getString(USER_MAIL));
-        tvUserName.setText(savedInstanceState.getString(USER_NAME));
-        tvUserBirthDate.setText(savedInstanceState.getString(USER_BIRTH_DATE));
-        super.onRestoreInstanceState(savedInstanceState);
     }
 
     @Override
@@ -77,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_CODE) {
                 tvUserName.setText(data.getStringExtra("userName"));
@@ -85,6 +74,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show();
             }
         }
-        super.onActivityResult(requestCode, resultCode, data);
     }
 }
