@@ -82,10 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tvUserName.setText(data.getStringExtra("userName"));
                 tvUserBirthDate.setText(data.getStringExtra("userBirthDate"));
                 tvUserMail.setText(data.getStringExtra("userMail"));
+                Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show();
             }
-            Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Изменения не сохранены", Toast.LENGTH_SHORT).show();
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
