@@ -78,12 +78,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode == RESULT_OK) {
-            switch (requestCode) {
-                case REQUEST_CODE:
-                    tvUserName.setText(data.getStringExtra("userName"));
-                    tvUserBirthDate.setText(data.getStringExtra("userBirthDate"));
-                    tvUserMail.setText(data.getStringExtra("userMail"));
-                    break;
+            if (requestCode == REQUEST_CODE) {
+                tvUserName.setText(data.getStringExtra("userName"));
+                tvUserBirthDate.setText(data.getStringExtra("userBirthDate"));
+                tvUserMail.setText(data.getStringExtra("userMail"));
             }
             Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show();
         } else {
