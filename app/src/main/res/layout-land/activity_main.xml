@@ -20,8 +20,8 @@
         android:text="@string/NAME_LABEL"></TextView>
 
     <TextView
-        android:id="@+id/tvUserName"
-        style="@style/InfoStyle"></TextView>
+        style="@style/InfoStyle"
+        android:id="@+id/tvUserName"></TextView>
 
     <TextView
         style="@style/LabelStyle"
@@ -45,5 +45,4 @@
         style="@style/ButtonStyle"
         android:id="@+id/btnInfoEdit"
         android:text="@string/BUTTON_EDIT"></Button>
-
 </LinearLayout>

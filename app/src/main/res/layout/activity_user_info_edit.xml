@@ -19,31 +19,37 @@
         android:id="@+id/tvNameLabel"
         android:text="@string/NAME_LABEL"></TextView>
 
-    <TextView
-        android:id="@+id/tvUserName"
-        style="@style/InfoStyle"></TextView>
+    <EditText
+        style="@style/InfoStyle"
+        android:id="@+id/editTextUserName"
+        android:ems="10"
+        android:inputType="textPersonName"/>
 
     <TextView
         style="@style/LabelStyle"
         android:id="@+id/tvBirthDateLabel"
         android:text="@string/BIRTHDATE_LABEL"></TextView>
 
-    <TextView
+    <EditText
         style="@style/InfoStyle"
-        android:id="@+id/tvUserBirthDate"></TextView>
+        android:id="@+id/editTextUserBirthDate"
+        android:ems="10"
+        android:inputType="date"/>
 
     <TextView
         style="@style/LabelStyle"
         android:id="@+id/tvMailLabel"
         android:text="@string/MAIL_LABEL"></TextView>
 
-    <TextView
+    <EditText
         style="@style/InfoStyle"
-        android:id="@+id/tvUserMail"></TextView>
+        android:id="@+id/editTextUserMail"
+        android:ems="10"
+        android:inputType="textEmailAddress"/>
 
     <Button
         style="@style/ButtonStyle"
-        android:id="@+id/btnInfoEdit"
-        android:text="@string/BUTTON_EDIT"></Button>
+        android:id="@+id/btnInfoSave"
+        android:text="@string/BUTTON_SAVE"></Button>
 
 </LinearLayout>

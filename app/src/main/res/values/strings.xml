@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">testApp</string>
+    <string name="NAME_LABEL">Ф.И.О.</string>
+    <string name="BIRTHDATE_LABEL">Дата рождения</string>
+    <string name="MAIL_LABEL">e-mail</string>
+    <string name="BUTTON_EDIT">Редактировать</string>
+    <string name="BUTTON_SAVE">Сохранить</string>
+    <string name="OK_RESULT_TOAST">Изменения сохранены</string>
+    <string name="ANOTHER_RESULT_TOAST">Изменения не сохранены</string>
 </resources>
