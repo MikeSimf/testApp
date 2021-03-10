@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String USER_NAME = "Фамилия Имя Отчество";
     private static final String USER_BIRTH_DATE = "01.01.1970";
     private static final String USER_MAIL = "example@google.com";
+    private static final String PARAM_NAME = "userName";
+    private static final String PARAM_BIRTHDATE = "userBirthDate";
+    private static final String PARAM_MAIL = "userMail";
 
 
     TextView tvUserName;
@@ -57,9 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, UserInfoEditActivity.class);
-        intent.putExtra("userName", tvUserName.getText().toString());
-        intent.putExtra("userBirthDate", tvUserBirthDate.getText().toString());
-        intent.putExtra("userMail", tvUserMail.getText().toString());
+        intent.putExtra(PARAM_NAME, tvUserName.getText().toString());
+        intent.putExtra(PARAM_BIRTHDATE, tvUserBirthDate.getText().toString());
+        intent.putExtra(PARAM_MAIL, tvUserMail.getText().toString());
         startActivityForResult(intent, REQUEST_CODE);
     }
 
@@ -68,10 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_CODE) {
-                tvUserName.setText(data.getStringExtra("userName"));
-                tvUserBirthDate.setText(data.getStringExtra("userBirthDate"));
-                tvUserMail.setText(data.getStringExtra("userMail"));
-                Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show();
+                tvUserName.setText(data.getStringExtra(PARAM_NAME));
+                tvUserBirthDate.setText(data.getStringExtra(PARAM_BIRTHDATE));
+                tvUserMail.setText(data.getStringExtra(PARAM_MAIL));
+                Toast.makeText(this, R.string.OK_RESULT_TOAST, Toast.LENGTH_SHORT).show();
             }
         }
     }

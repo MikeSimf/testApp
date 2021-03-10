@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.*;
 
 public class UserInfoEditActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String PARAM_NAME = "userName";
+    private static final String PARAM_BIRTHDATE = "userBirthDate";
+    private static final String PARAM_MAIL = "userMail";
 
     EditText editTextUserName;
     EditText editTextUserBirthDate;
@@ -26,17 +29,17 @@ public class UserInfoEditActivity extends AppCompatActivity implements View.OnCl
         btnInfoSave = (Button) findViewById(R.id.btnInfoSave);
         btnInfoSave.setOnClickListener(this);
 
-        editTextUserName.setText(getIntent().getStringExtra("userName"));
-        editTextUserBirthDate.setText(getIntent().getStringExtra("userBirthDate"));
-        editTextUserMail.setText(getIntent().getStringExtra("userMail"));
+        editTextUserName.setText(getIntent().getStringExtra(PARAM_NAME));
+        editTextUserBirthDate.setText(getIntent().getStringExtra(PARAM_BIRTHDATE));
+        editTextUserMail.setText(getIntent().getStringExtra(PARAM_MAIL));
     }
 
     @Override
     public void onClick(View v) {
         Intent intent = new Intent();
-        intent.putExtra("userName", editTextUserName.getText().toString());
-        intent.putExtra("userBirthDate", editTextUserBirthDate.getText().toString());
-        intent.putExtra("userMail", editTextUserMail.getText().toString());
+        intent.putExtra(PARAM_NAME, editTextUserName.getText().toString());
+        intent.putExtra(PARAM_BIRTHDATE, editTextUserBirthDate.getText().toString());
+        intent.putExtra(PARAM_MAIL, editTextUserMail.getText().toString());
         setResult(RESULT_OK, intent);
         finish();
     }
